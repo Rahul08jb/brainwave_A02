@@ -1,0 +1,94 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.prose img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+}
+
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 640px) {
+    /* Reduce padding on app container for smaller screens */
+    #app {
+        padding: 1rem 0.5rem;
+    }
+
+    /* Smaller header font size */
+    #home-link {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    /* Adjust modal size and padding for mobile */
+    .modal {
+        width: 95%;
+        max-width: none;
+        padding: 1rem;
+    }
+
+    /* Ensure touch-friendly buttons */
+    button, a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Adjust auth links spacing */
+    #auth-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    #auth-links > * {
+        text-align: center;
+    }
+
+    /* Make post grid single column on very small screens if needed, but Tailwind handles */
+    /* Adjust form inputs */
+    input, textarea {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+}
